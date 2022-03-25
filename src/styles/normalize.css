@@ -1,0 +1,12 @@
+body {
+    background-color: #E2D6BE;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    outline: none;
+    -moz-appearance: none;
+    background: none;
+    overflow: hidden;
+    resize: none;
+}

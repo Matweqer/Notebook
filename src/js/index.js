@@ -26,7 +26,7 @@ function addNote(event) {
 
     let newNote = document.createElement('div')
     let newNoteNum = document.createElement('div')
-    let newNoteText = document.createElement('div')
+    let newNoteText = document.createElement('textarea')
     let closeNote = document.createElement('div')
 
     newNote.classList.add('notebook__note');
@@ -55,6 +55,14 @@ function removeNote(event) {
     target.closest('.note').remove()
     countOfAdd--;
     checkNumbersOfNotes()
+
+}
+
+function changeNote(event) {
+    let target = event.target;
+    if (target.classList.value !== 'note__text') return
+
+
 
 }
 

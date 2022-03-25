@@ -1,15 +1,11 @@
-
+@import "normalize.css";
 
 * {
     font-family: Quicksand, serif;
     font-size: 16px;
     color: #72CCCA;
 }
-body {
-    background-color: #E2D6BE;
-    margin: 0;
-    padding: 0;
-}
+
 [class*="__container"] {
     max-width: 1087px;
     margin: 0 auto;
@@ -132,6 +128,7 @@ body {
     flex: 1 0 auto;
     padding-bottom: 50px;
 }
+
 .notebook__container {
     display: flex;
     flex-direction: row;
@@ -157,45 +154,56 @@ body {
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: #4D545E;
+    padding: 5px;
+}
+.notebook__note textarea {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: #72CCCA;
+
 }
 .note__number {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 10px;
+    height: 100%;
+    margin-left: 10px;
+    min-width: 30px;
     font-size: 30px;
 }
 .note__text {
-    margin: 10px auto 10px 10px;
+    margin: 10px 0;
     justify-self: start;
     text-align: left;
     font-family: Quicksand, serif;
     font-size: 16px;
     color: #72CCCA;
+    border: none;
 }
 .note__close {
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 10px;
-    width: 32px;
-    height: 32px;
+    min-width: 30px;
+    height: 100%;
     opacity: 0.3;
     transition: opacity 0.2s ease 0ms;
+    margin-left: 5px;
+
 }
 .note__close:hover {
     opacity: 1;
-
 }
 .note__close:before, .note__close:after {
-    content: '    ';
+    position: absolute;
+    right: 50%;
+    content: '';
     height: 32px;
     width: 2px;
     background-color: #72CCCA;
     z-index: 10;
-}
-.note__close:before:hover, .note__close:after:hover {
-
 }
 .note__close:before {
     transform: rotate(45deg);
