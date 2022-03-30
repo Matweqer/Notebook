@@ -166,6 +166,7 @@
 }
 .note__number {
     display: flex;
+    flex-grow: 1;
     flex-direction: row;
     align-items: center;
     height: 100%;
@@ -174,6 +175,8 @@
     font-size: 30px;
 }
 .note__text {
+    display: flex;
+    flex-grow: 15;
     margin: 10px 0;
     justify-self: start;
     text-align: left;
@@ -185,6 +188,7 @@
 .note__close {
     position: relative;
     display: flex;
+    flex-grow: 1;
     align-items: center;
     min-width: 30px;
     height: 100%;

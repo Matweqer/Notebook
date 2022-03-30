@@ -1,4 +1,4 @@
-const textArea = document.querySelector('.input__area'),
+const inputArea = document.querySelector('.input__area'),
     addButton = document.querySelector('.input__button'),
     notesArea = document.querySelector('.notebook__notes');
 
@@ -14,19 +14,19 @@ function checkNumbersOfNotes() {
 function addNote(event) {
     event.preventDefault();
 
-    if (textArea.value === '') {
-        textArea.classList.add('error');
-        textArea.placeholder = 'It does not be empty!'
+    if (inputArea.value === '') {
+        inputArea.classList.add('error');
+        inputArea.placeholder = 'It does not be empty!'
         setTimeout(() => {
-            textArea.classList.remove('error');
-            textArea.placeholder = 'Write your note here';
+            inputArea.classList.remove('error');
+            inputArea.placeholder = 'Write your note here';
         }, 3000);
         return
     }
 
     let newNote = document.createElement('div')
     let newNoteNum = document.createElement('div')
-    let newNoteText = document.createElement('textarea')
+    let newNoteText = document.createElement('div')
     let closeNote = document.createElement('div')
 
     newNote.classList.add('notebook__note');
@@ -36,8 +36,8 @@ function addNote(event) {
     closeNote.classList.add('note__close');
 
     newNoteNum.textContent = `${countOfAdd}`;
-    newNoteText.textContent = textArea.value;
-    textArea.value = '';
+    newNoteText.textContent = inputArea.value;
+    inputArea.value = '';
 
     newNote.appendChild(newNoteNum);
     newNote.appendChild(newNoteText);
@@ -55,14 +55,6 @@ function removeNote(event) {
     target.closest('.note').remove()
     countOfAdd--;
     checkNumbersOfNotes()
-
-}
-
-function changeNote(event) {
-    let target = event.target;
-    if (target.classList.value !== 'note__text') return
-
-
 
 }
 
